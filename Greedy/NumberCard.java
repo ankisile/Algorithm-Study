@@ -1,5 +1,5 @@
-/* package whatever; // don't place package name! */
 // 내가 그냥 풀었을때
+/* package whatever; // don't place package name! */
 
 import java.util.*;
 import java.lang.*;
@@ -14,31 +14,28 @@ class Ideone
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int sum =0;
+		int max =0;
 		
 		int n = sc.nextInt();
 		int m = sc.nextInt();
-		int k = sc.nextInt();
 		
-		int arr [] =new int [n];
+		
+		int arr [][] =new int [n][m];
 		
 		for(int i=0;i<n;i++) {
-			arr[i] = sc.nextInt();
+			for(int j=0;j<m;j++){
+				arr[i][j] = sc.nextInt();
+			}
 		}
 		
-		Arrays.sort(arr); // 입력 받은 수들 정렬하기
-		
-		int first = arr[n-1];
-		int second = arr[n-2];
-		
-		System.out.println(first + " "+second);
-		
-		// m이 k로 나누어 떨어지는 경우도 있기 때문에 반복되는 경우로 생각해야함
-		sum = sum+ first*(k*(m/(k+1))+m%(k+1));
-		sum+= second*(m/(k+1));
-		
-		
-		System.out.println(sum);
+		for(int i=0;i<n;i++){
+			Arrays.sort(arr[i]); // 입력 받은 수들 정렬하기
+			if(arr[i][0]>max)
+				max=arr[i][0];
+			
+		}
+
+		System.out.println(max);
 
 	}
 	
