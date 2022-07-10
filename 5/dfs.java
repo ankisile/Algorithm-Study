@@ -25,8 +25,7 @@ class Ideone
     	}
     }
     
-	public static void main (String[] args) throws java.lang.Exception
-	{
+    public static void main (String[] args) throws java.lang.Exception{
 		for (int i = 0; i < 9; i++) {
             graph.add(new ArrayList<Integer>());
         }
@@ -58,5 +57,5 @@ class Ideone
         graph.get(8).add(7);
 
         dfs(1);
-	}
+    }
 }
